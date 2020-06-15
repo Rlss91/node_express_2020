@@ -7,6 +7,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="/bootstrap-4.5.0-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/home.css">
+    <script src="/js/tools.js"></script>
+    <script src="/js/home.js"></script>
 </head>
 
 <body>
@@ -29,9 +31,10 @@
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1">Check me out</label>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" onclick="fdata(event)">Submit</button>
         </form>
     </div>
+    <div class="response" id="response"></div>
 </body>
 
 </html>

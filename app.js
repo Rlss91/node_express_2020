@@ -3,6 +3,7 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const path = require("path");
 const { allowedNodeEnvironmentFlags } = require("process");
+const { isNumber } = require("util");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -25,6 +26,15 @@ app.get("/api/:userid/a1/a2/:aaa", (req, res) => {
 });
 app.get("/daf", (req, res) => {
   res.json(req.query);
+});
+app.post("/api/isnumber", (req, res) => {
+  let num = parseFloat(req.body.email);
+  console.log(num);
+  if (isNaN(num)) res.json({ err: "not a number" });
+  else {
+    num += 5;
+    res.json({ number: num });
+  }
 });
 // //http://www.name.co.il/login
 // app.get("/login", (req, res) => {});
