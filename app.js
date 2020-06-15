@@ -27,13 +27,15 @@ app.get("/api/:userid/a1/a2/:aaa", (req, res) => {
 app.get("/daf", (req, res) => {
   res.json(req.query);
 });
+let arr = [];
 app.post("/api/isnumber", (req, res) => {
   let num = parseFloat(req.body.email);
   console.log(num);
   if (isNaN(num)) res.json({ err: "not a number" });
   else {
     num += 5;
-    res.json({ number: num });
+    arr = [...arr, num];
+    res.json({ number: num, arr: arr });
   }
 });
 // //http://www.name.co.il/login
